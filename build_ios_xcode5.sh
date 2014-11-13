@@ -17,7 +17,7 @@ mkdir -p $DEST
 
 for arch in $ARCHS; do
 	make clean
-	IOSMV=" -miphoneos-version-min=5.0"
+	IOSMV=" -miphoneos-version-min=6.1"
 	case $arch in
 	arm*)
 		if [ $arch == "arm64" ]
@@ -37,7 +37,7 @@ for arch in $ARCHS; do
 	*)
 		echo "Building opencore-amr for iPhoneSimulator $arch *****************"
 		PATH=`xcodebuild -version -sdk iphonesimulator PlatformPath`"/Developer/usr/bin:$PATH" \
-		CXX="xcrun --sdk iphonesimulator clang++ -arch $arch $IOSMV -miphoneos-version-min=5.0" \
+		CXX="xcrun --sdk iphonesimulator clang++ -arch $arch $IOSMV -miphoneos-version-min=6.1" \
 		./configure \
 		--prefix=$DEST \
 		--disable-shared
