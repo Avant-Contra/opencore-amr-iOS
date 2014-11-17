@@ -1,3 +1,9 @@
+
+update -miphoneos-version-min=5.0 to 6.1
+if -miphoneos-version-min=5.0, then: "configure: error: C++ compiler cannot create executables", on Mac 10.10, Xcode 6.1
+
+
+
 opencore-amr-iOS
 ================
 
